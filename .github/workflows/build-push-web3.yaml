@@ -7,8 +7,8 @@ on:
       - '**'
 
 jobs:
-  build-push:
-    name: build-push
+  build-push-python-web3:
+    name: build-push-python-web3
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
@@ -43,7 +43,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v4
         with:
-          context: ./web3
+          context: "{{ defaultContext }}:python-web3"
           file: Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           push: true
