@@ -10,7 +10,7 @@ RUN apt-get update && \
     echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main" | tee \
         /etc/apt/sources.list.d/clickhouse.list && \
     apt-get update && \
-    apt-get install -y clickhouse-client awscli
+    apt-get install -y clickhouse-client awscli jq
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
