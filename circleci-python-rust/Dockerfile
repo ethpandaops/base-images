@@ -13,8 +13,8 @@ ENV PYENV_ROOT=/home/circleci/.pyenv \
 # Update apt sources
 RUN sudo apt-get update && sudo apt upgrade -y
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN sudo apt-get clean && \
+    sudo rm -rf /var/lib/apt/lists/*
 
 # Install Rust, Cargo and cryo_cli
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
