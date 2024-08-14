@@ -18,6 +18,5 @@ RUN sudo apt-get clean && \
 
 # Install Rust, Cargo and cryo_cli
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-RUN echo "export PATH=/root/.cargo/bin:$PATH" >> /root/.bashrc
-
+ENV PATH="/home/circleci/.cargo/bin:$PATH"
 
