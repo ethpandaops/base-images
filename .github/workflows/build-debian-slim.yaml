@@ -1,4 +1,4 @@
-name: Build docker image
+name: Build debian slim docker image
 on:
   push:
     branches:

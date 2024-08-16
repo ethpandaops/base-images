@@ -1,4 +1,4 @@
-name: Build docker image
+name: Build circleci python rust docker image
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
     tags:
       - '**'
   schedule:
-    - cron: "30 2 * * *
+  - cron: "30 2 * * *"
 
 jobs:
   build-circleci-python-rust:

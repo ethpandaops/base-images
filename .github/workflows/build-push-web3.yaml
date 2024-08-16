@@ -1,4 +1,4 @@
-name: Build docker image
+name: Build web3 docker image
 on:
   push:
     branches:
