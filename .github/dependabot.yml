@@ -8,3 +8,18 @@ updates:
         actions:
            patterns:
               - '*'
+   - package-ecosystem: docker
+     directories:
+        - /circleci-python-rust
+        - /clickhouse-tools
+        - /debian-docker
+        - /debian-slim
+        - /python-web3
+     schedule:
+        interval: monthly
+   - package-ecosystem: pip
+     directories:
+        - /clickhouse-tools
+        - /python-web3
+     schedule:
+        interval: monthly
