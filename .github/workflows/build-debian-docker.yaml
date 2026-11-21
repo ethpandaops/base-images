@@ -7,6 +7,13 @@ on:
       - '**'
   workflow_dispatch:
 
+# Per workflow as well as per ref: concurrency groups are repository-wide, and
+# a group holds only one pending run, so a shared group would cancel the other
+# image builds queued by the same push.
+concurrency:
+  group: docker-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-push-debian-docker:
     name: build-push-debian-docker

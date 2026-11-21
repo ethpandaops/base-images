@@ -9,6 +9,13 @@ on:
   - cron: "30 2 * * *"
   workflow_dispatch:
 
+# Per workflow as well as per ref: concurrency groups are repository-wide, and
+# a group holds only one pending run, so a shared group would cancel the other
+# image builds queued by the same push.
+concurrency:
+  group: docker-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-circleci-python-rust:
     name: build-circleci-python-rust
